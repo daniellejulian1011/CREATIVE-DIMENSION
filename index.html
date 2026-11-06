@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#180d22">
+  <meta name="description" content="The Creative Dimension — Danielle Julian’s interactive portfolio of graphic design, UX/UI, branding, web and visual storytelling.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23180d22'/%3E%3Ccircle cx='32' cy='32' r='7' fill='%23f58ab8'/%3E%3C/svg%3E">
+  <title>The Creative Dimension — Danielle Julian</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="./styles/responsive.css">
+  <script type="importmap">
+    {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}
+  </script>
+</head>
+<body>
+  <svg class="svg-library" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7Z"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+    <symbol id="i-sound" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4ZM15 9a4 4 0 0 1 0 6M18 6a8 8 0 0 1 0 12"/></symbol>
+    <symbol id="i-muted" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4ZM16 9l5 6M21 9l-5 6"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.8 9a2.4 2.4 0 0 1 4.6 1c0 2-2.4 2.2-2.4 4M12 18h.01"/></symbol>
+    <symbol id="i-motion" viewBox="0 0 24 24"><path d="M4 12h3l2-5 4 10 2-5h5"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+    <symbol id="i-expand" viewBox="0 0 24 24"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="2.5"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M6 9v11M6 4v.01M10 20v-6a4 4 0 0 1 8 0v6M10 9v11"/></symbol>
+  </svg>
+
+  <div id="scene-shell" class="scene-shell">
+    <div class="scene-poster" aria-hidden="true"><span class="poster-ring"></span><span class="poster-arch a1"></span><span class="poster-arch a2"></span><span class="poster-arch a3"></span></div>
+    <canvas id="world" aria-label="Interactive 3D fantasy exhibition. Use the named portal buttons for keyboard and touch access." tabindex="0"></canvas>
+    <div class="scene-vignette" aria-hidden="true"></div>
+  </div>
+
+  <header class="site-header">
+    <button class="brand" data-route="home" aria-label="Berry Vibes Studio — home">
+      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M32 29C15 27 14 8 23 5c8-2 12 12 9 24Z"/><path d="M35 30C37 13 56 12 59 21c3 8-11 13-24 9Z"/><path d="M36 34c16 4 17 23 8 26-8 3-13-11-8-26Z"/><path d="M29 35c-3 17-22 19-26 10-3-8 11-14 26-10Z"/><path d="M29 30C17 19 25 4 34 7c8 3 5 17-5 23Z"/><circle cx="32" cy="32" r="4" fill="currentColor"/></g></svg>
+      <span>BERRY VIBES <small>STUDIO</small></span>
+    </button>
+    <nav class="main-nav" aria-label="Primary navigation">
+      <button class="nav-link is-active" data-route="home">Home</button>
+      <button class="nav-link" data-route="work">Work</button>
+      <button class="nav-link" data-route="about">About</button>
+      <button class="nav-link" data-route="resume">Resume</button>
+      <button class="nav-link" data-route="contact">Contact</button>
+    </nav>
+    <div class="header-tools">
+      <button id="sound-toggle" class="icon-button" aria-label="Turn ambient sound on" aria-pressed="false" title="Ambient sound"><svg><use href="#i-muted"/></svg></button>
+      <label class="quality-control" title="Graphics quality"><span class="sr-only">Graphics quality</span><select id="quality-select"><option value="lite">Graphics: Lite</option><option value="balanced">Graphics: Balanced</option><option value="high" selected>Graphics: High</option></select></label>
+      <button id="motion-toggle" class="icon-button" aria-label="Reduce motion" aria-pressed="false" title="Reduce motion"><svg><use href="#i-motion"/></svg></button>
+      <button id="help-open" class="icon-button" aria-label="Open controls help" title="Controls help"><svg><use href="#i-help"/></svg></button>
+      <button id="menu-toggle" class="icon-button menu-toggle" aria-label="Open navigation menu" aria-expanded="false"><svg><use href="#i-menu"/></svg></button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section id="home-view" class="home-view" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="hero-kicker">THE</p>
+        <h1 id="hero-title">CREATIVE<br><em>DIMENSION</em></h1>
+        <p class="portfolio-by">A Portfolio by <span>Danielle Julian</span></p>
+        <div class="hero-rule"></div>
+        <p class="hero-role">Graphic Designer <b>•</b> UX/UI Designer <b>•</b><br>Visual Storyteller</p>
+        <p class="hero-tagline">Playful systems. Purposeful stories.<br>Nearly 4 years of hands-on practice.</p>
+        <div class="hero-actions">
+          <button id="enter-experience" class="button button-primary"><svg><use href="#i-play"/></svg>Enter Experience</button>
+          <button class="button button-secondary" data-route="work"><svg><use href="#i-grid"/></svg>View Work</button>
+        </div>
+      </div>
+
+      <div class="portal-links" aria-label="Exhibition zones">
+        <button class="portal-link" data-zone="visual"><span>Visual<br>Design</span><svg><use href="#i-arrow"/></svg><small>Identity · posters · composites</small></button>
+        <button class="portal-link" data-zone="interactive"><span>Interactive<br>Design</span><svg><use href="#i-arrow"/></svg><small>UX/UI · web · interaction</small></button>
+        <button class="portal-link" data-zone="worlds"><span>Digital<br>Worlds</span><svg><use href="#i-arrow"/></svg><small>Live environmental study</small></button>
+      </div>
+
+      <div class="explore-bar">
+        <span class="key-group"><kbd>W</kbd><span><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></span></span><span>Explore</span>
+        <span class="mouse-symbol" aria-hidden="true"></span><span>Look around</span>
+        <kbd>E</kbd><span>Interact</span>
+        <button id="classic-mode">Classic portfolio <svg><use href="#i-arrow"/></svg></button>
+      </div>
+    </section>
+
+    <section id="work-view" class="page-panel work-view" aria-labelledby="work-title" hidden>
+      <div class="panel-heading"><div><p class="section-label">The exhibition</p><h2 id="work-title">Explore the Work</h2></div><a class="text-link" href="./assets/documents/Danielle-Julian-Master-Portfolio-2026.pdf" target="_blank" rel="noopener">Open master portfolio <svg><use href="#i-arrow"/></svg></a></div>
+      <div class="work-layout">
+        <aside id="project-filters" class="project-filters" aria-label="Filter projects"></aside>
+        <div><div id="project-grid" class="project-grid"></div><p id="filter-status" class="sr-only" aria-live="polite"></p></div>
+      </div>
+    </section>
+
+    <section id="project-view" class="page-panel project-view" aria-labelledby="project-title" hidden>
+      <button id="back-to-work" class="back-button"><svg><use href="#i-back"/></svg>Back to Work</button>
+      <div class="project-hero">
+        <div class="project-intro"><p id="project-type" class="section-label"></p><h2 id="project-title"></h2><p id="project-summary" class="project-summary"></p><p id="project-status" class="project-status"></p></div>
+        <button id="project-hero-button" class="project-hero-image" aria-label="Open project image fullscreen"><img id="project-hero-image" alt=""><span><svg><use href="#i-expand"/></svg>Inspect artwork</span></button>
+      </div>
+      <div id="project-thumbnails" class="project-thumbnails" aria-label="Project images"></div>
+      <div class="project-details">
+        <div><h3>Project Overview</h3><dl><div><dt>My role</dt><dd id="project-role"></dd></div><div><dt>Focus</dt><dd id="project-focus"></dd></div><div><dt>Outcome</dt><dd id="project-outcome"></dd></div></dl></div>
+        <div><h3>Key Deliverables</h3><ul id="project-deliverables" class="deliverable-list"></ul><button id="next-project" class="button button-secondary">Next project <svg><use href="#i-arrow"/></svg></button></div>
+      </div>
+    </section>
+
+    <section id="about-view" class="page-panel about-view" aria-labelledby="about-title" hidden>
+      <div class="about-copy"><p class="section-label">Multidisciplinary by practice</p><h2 id="about-title">About Me</h2><p class="about-lead">Graphic Designer <b>•</b> UX/UI Designer <b>•</b><br>Visual Storyteller</p><p>I’m Danielle Julian, a multidisciplinary designer working across graphic design, UX/UI, branding, web design, interaction design and visual storytelling. I turn ideas into clear visual systems through research, wireframes, typography, brand identity, polished interfaces and expressive imagery.</p><p>I discovered graphic design around 2021 and began practicing consistently in late 2022. My independent and academic practice now spans brand systems, product concepts, responsive websites, front-end coding and research-driven design.</p><div class="availability"><span></span>Available now · Degree requirements completed<br><small>Formal commencement December 2026</small></div></div>
+      <div class="about-visual"><img src="./assets/images/about-reference.webp" alt="Supplied Berry Vibes designer workspace direction with blossoms and warm light" width="1038" height="716"><div class="about-note">Playful systems.<br><em>Purposeful stories.</em></div></div>
+      <div class="skills-block"><h3>Tools & Skills</h3><div id="tools-list" class="tools-list"></div><div class="core-focus"><h3>Core Focus</h3><div id="skills-list" class="skill-tags"></div></div><div class="education"><h3>Education & Credentials</h3><p><strong>University of Texas at Dallas</strong><br>B.A., Arts, Technology, and Emerging Communication — Graphic Design concentration<br><small>Degree requirements completed · Commencement Dec 2026</small></p><p><strong>CUNY College of Staten Island</strong><br>A.A., Liberal Arts & Sciences — Communication</p><p><strong>Google UX Design Certificate</strong><br>Completed 2026</p></div></div>
+    </section>
+
+    <section id="resume-view" class="page-panel resume-view" aria-labelledby="resume-title" hidden>
+      <div class="resume-copy"><p class="section-label">Background & practice</p><h2 id="resume-title">Resume</h2><p>My background, experience, education and skills at a glance.</p><a class="button button-primary" href="./assets/documents/Danielle-Julian-Creative-Resume.pdf" target="_blank" rel="noopener"><svg><use href="#i-eye"/></svg>View Resume (PDF)</a><a class="button button-secondary" href="./assets/documents/Danielle-Julian-Creative-Resume.pdf" download><svg><use href="#i-download"/></svg>Download Resume</a><p class="resume-meta">Independent + Academic Design Practice<br>Late 2022–Present</p></div>
+      <div class="resume-document"><img src="./assets/images/resume-preview.webp" alt="First page of Danielle Julian’s creative résumé" width="1200" height="1600"><object data="./assets/documents/Danielle-Julian-Creative-Resume.pdf#view=FitH" type="application/pdf" aria-label="Danielle Julian résumé PDF preview"><a href="./assets/documents/Danielle-Julian-Creative-Resume.pdf">Open the résumé PDF</a></object></div>
+    </section>
+
+    <section id="contact-view" class="page-panel contact-view" aria-labelledby="contact-title" hidden>
+      <div class="contact-copy"><p class="section-label">Start a conversation</p><h2 id="contact-title">Contact</h2><p>Let’s connect! I’m open to design opportunities, collaborations and creative projects.</p><address><a href="mailto:daniellejulian1011@gmail.com"><svg><use href="#i-mail"/></svg><span>daniellejulian1011@gmail.com</span></a><a href="https://www.linkedin.com/in/danielle-julian-55664a25b" target="_blank" rel="noopener"><svg><use href="#i-linkedin"/></svg><span>linkedin.com/in/danielle-julian-55664a25b</span></a><p><svg><use href="#i-pin"/></svg><span>Melissa, Texas</span></p></address><a class="button button-primary" href="mailto:daniellejulian1011@gmail.com?subject=Creative%20opportunity%20for%20Danielle">Write an Email <svg><use href="#i-arrow"/></svg></a></div>
+      <div class="contact-portal" aria-hidden="true"><div class="contact-orb"><span></span><i></i><b></b></div><p>Let’s make something<br><em>memorable.</em></p></div>
+    </section>
+  </main>
+
+  <div id="immersive-hud" class="immersive-hud" hidden><div class="crosshair" aria-hidden="true"></div><p id="interaction-prompt">Move toward an exhibition portal</p><button id="exit-experience">Exit exploration <kbd>Esc</kbd></button></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <dialog id="help-dialog" class="modal help-modal" aria-labelledby="help-title"><button class="modal-close" data-close="help-dialog" aria-label="Close help"><svg><use href="#i-close"/></svg></button><p class="section-label">Two ways to browse</p><h2 id="help-title">Choose your pace.</h2><div class="help-grid"><div><h3>Classic portfolio</h3><p>Use the navigation, zone buttons, filters and project cards. Every project is available without entering the 3D experience.</p></div><div><h3>Immersive exploration</h3><p>Click Enter Experience, then use <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> to move and the mouse to look. Aim at a portal and press <kbd>E</kbd> or click to enter.</p></div></div><p class="help-note">On touch devices, drag the scene to look and use the named portal buttons. Press <kbd>Esc</kbd> to release camera control.</p><button class="button button-primary" data-close="help-dialog">Got it</button></dialog>
+
+  <dialog id="lightbox" class="modal lightbox" aria-labelledby="lightbox-title"><button class="modal-close" data-close="lightbox" aria-label="Close fullscreen image"><svg><use href="#i-close"/></svg></button><h2 id="lightbox-title" class="sr-only">Artwork inspection</h2><img id="lightbox-image" alt=""><div class="lightbox-controls"><button id="lightbox-prev" aria-label="Previous image"><svg><use href="#i-back"/></svg></button><p id="lightbox-count"></p><button id="lightbox-next" aria-label="Next image"><svg><use href="#i-arrow"/></svg></button></div></dialog>
+
+  <div id="loader" class="loader" role="status" aria-live="polite"><div class="loader-brand"><svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M32 29C15 27 14 8 23 5c8-2 12 12 9 24Z"/><path d="M35 30C37 13 56 12 59 21c3 8-11 13-24 9Z"/><path d="M36 34c16 4 17 23 8 26-8 3-13-11-8-26Z"/><path d="M29 35c-3 17-22 19-26 10-3-8 11-14 26-10Z"/><circle cx="32" cy="32" r="4" fill="currentColor"/></g></svg><p>BERRY VIBES <span>STUDIO</span></p></div><h2>The Creative Dimension</h2><p>A Portfolio by Danielle Julian</p><div class="loader-track"><span id="loader-progress"></span></div><p id="loader-label">Preparing the exhibition…</p><button id="skip-loader">Skip intro</button></div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
